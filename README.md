@@ -1,6 +1,7 @@
 # PopularMoviesApplication: Android
 
 <body>
+  <h3>Project Summary</h3>
   <p>This is an application to help users discover popular and recent movies: Learning source from Udaicy, Android Developer Nanodegree</p>
   
   <h3>This App:</h3>
