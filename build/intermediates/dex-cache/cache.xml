@@ -1,33 +1,3 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
+<items version="2" />
 
-    <item
-        jar="/Users/ChadYeo/Desktop/Udacity/PopularMoviesApplication/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Users/ChadYeo/Desktop/Udacity/PopularMoviesApplication/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.1.1_d1a69e5b65d2150750a40587d72b559b42b0b4b2.jar" />
-    </item>
-    <item
-        jar="/Users/ChadYeo/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="/Users/ChadYeo/Desktop/Udacity/PopularMoviesApplication/app/build/intermediates/pre-dexed/debug/gson-2.3.1_e30879f2fb91077d21c0dcd9d16019b73a000699.jar" />
-    </item>
-    <item
-        jar="/Users/ChadYeo/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.6.0/a7537446a030da8eb0da4c71424d16c2589f6c4a/glide-3.6.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="a7537446a030da8eb0da4c71424d16c2589f6c4a">
-        <dex dex="/Users/ChadYeo/Desktop/Udacity/PopularMoviesApplication/app/build/intermediates/pre-dexed/debug/glide-3.6.0_f2bc79a4b05e4ed74658a19cf079af40fc896ef0.jar" />
-    </item>
-    <item
-        jar="/Users/ChadYeo/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit/retrofit/1.9.0/a681c044244d9fc375198588297a39ba78028423/retrofit-1.9.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="a681c044244d9fc375198588297a39ba78028423">
-        <dex dex="/Users/ChadYeo/Desktop/Udacity/PopularMoviesApplication/app/build/intermediates/pre-dexed/debug/retrofit-1.9.0_1710a905dd598456f65fcbf1d28d866d94ae1cf0.jar" />
-    </item>
-
-</items>

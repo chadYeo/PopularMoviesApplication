@@ -132,7 +132,7 @@ public class MoviesFragment extends Fragment {
         super.onSaveInstanceState(outState);
     }
 
-    // Loads move list
+    // Loads movie list
     private void loadData() {
         showLoadingViews();
         RestAdapter adapter = RetrofitAdapter.getRestAdapter();

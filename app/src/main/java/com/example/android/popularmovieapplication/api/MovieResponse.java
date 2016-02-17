@@ -56,7 +56,11 @@ public class MovieResponse {
             out.writeString(releaseDate);
         }
 
-        public String getPosterUrl() { return IMAGE_BASE_URL + "w185" + this.posterPath; }
-        private final static String IMAGE_BASE_URL = "http://image.tmbd.org/t/p/";
+        // Helper method to build poster image url.
+        public String getPosterUrl() {
+            return IMAGE_BASE_URL + "w185" + this.posterPath;
+        }
+
+        private final static String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/";
     }
 }
