@@ -29,6 +29,6 @@
         </ul>
     </ul>
   
-  <h3>API:</h3>
+  <h3>API (themovieDB API):</h3>
   <p>http://image.tmdb.org</p>
 </bldy>
