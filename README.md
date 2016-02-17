@@ -29,6 +29,9 @@
         </ul>
     </ul>
   
-  <h3>API (themovieDB API):</h3>
-  <p>http://image.tmdb.org</p>
-</bldy>
+  <h3>Image Library:</h3>
+  <p> Glide (https://github.com/bumptech/glide)</p>
+  
+  <h3>API:</h3>
+  <p> themoviedb.org API (http://image.tmdb.org)</p>
+</body>
