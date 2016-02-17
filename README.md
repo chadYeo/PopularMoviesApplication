@@ -1,4 +1,6 @@
-<head>"# PopularMoviesApplication: Android"</head>
+<head>
+  <title>"# PopularMoviesApplication: Android"</title>
+</head>
 <body>
   <p>This is an application to help users discover popular and recent movies: Learning source from Udaicy, Android Developer Nanodegree</p>
   
