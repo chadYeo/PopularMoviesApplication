@@ -2,32 +2,18 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-22.2.0_0f9aacb312f83c4a05b79bc54da89bb829f159a5.jar" />
-    </item>
-    <item
-        jar="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-22.2.0_826b4ac8a0bf916fe4df391e59e4aac1313f8792.jar" />
-    </item>
-    <item
-        jar="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
-        <dex dex="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-22.2.0_11385b21616310fab1b28159b1d701a89576932f.jar" />
-    </item>
-    <item
         jar="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
         <dex dex="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0_6f52285f3a63636df496d866becdc9f30317168c.jar" />
+    </item>
+    <item
+        jar="C:\Users\chad.yeo\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\pre-dexed\debug\gson-2.3.1_791f5de4b4f2c00448ef135ad19b7885dc30f4cc.jar" />
     </item>
     <item
         jar="C:\Users\chad.yeo\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
@@ -44,11 +30,18 @@
         <dex dex="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\pre-dexed\debug\retrofit-1.9.0_c52fae5e3bbf5c5309d27e70b9991411e47a2744.jar" />
     </item>
     <item
-        jar="C:\Users\chad.yeo\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jar="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
-        <dex dex="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\pre-dexed\debug\gson-2.3.1_791f5de4b4f2c00448ef135ad19b7885dc30f4cc.jar" />
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-22.2.0_826b4ac8a0bf916fe4df391e59e4aac1313f8792.jar" />
+    </item>
+    <item
+        jar="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5b37cf49773f7f17aca9830efd3053b0cac56728">
+        <dex dex="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-22.2.0_11385b21616310fab1b28159b1d701a89576932f.jar" />
     </item>
     <item
         jar="C:\Users\chad.yeo\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.6.0\a7537446a030da8eb0da4c71424d16c2589f6c4a\glide-3.6.0.jar"
@@ -56,6 +49,13 @@
         revision="23.0.2"
         sha1="a7537446a030da8eb0da4c71424d16c2589f6c4a">
         <dex dex="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\pre-dexed\debug\glide-3.6.0_b093a58be64c625506b4ba1be619d12f427d5fa9.jar" />
+    </item>
+    <item
+        jar="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\chad.yeo\Desktop\PopularMoviesApplication\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-22.2.0_0f9aacb312f83c4a05b79bc54da89bb829f159a5.jar" />
     </item>
 
 </items>

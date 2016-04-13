@@ -63,7 +63,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/main_info">
@@ -83,7 +83,14 @@
                 android:visibility="gone"
                 tools:text="Here movie overview goes" />
 
-            <!-- Overview section -->
+            <TextView
+                android:id="@+id/empty_overview_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:text="@string/empty_overview" />
+
+            <!-- Trailer section -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -105,6 +112,27 @@
                 android:paddingBottom="16dp"
                 android:text="@string/empty_trailers" />
 
+            <!-- Review section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reviews"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <LinearLayout
+                android:id="@+id/reviews_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="16dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/empty_reviews_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:text="@string/empty_reviews" />
         </LinearLayout>
 
     </RelativeLayout>
