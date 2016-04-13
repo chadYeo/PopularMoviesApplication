@@ -11,5 +11,8 @@
     <string name="sort_order_dialog_title">Select sort order</string>
     <string name="prefs_sort_order">sort_order</string>
     <string name="sort_order_title">Sort by</string>
+    <string name="overview">Overview</string>
+    <string name="trailers">Trailers</string>
+    <string name="empty_trailers">No trailers available</string>
 
 </resources>

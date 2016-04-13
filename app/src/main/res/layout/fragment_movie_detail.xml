@@ -62,13 +62,50 @@
             </LinearLayout>
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/overview_text_view"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/main_info"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            tools:text="Here movie overview goes"/>
+            android:layout_height="match_parent"
+            android:layout_below="@+id/main_info">
+
+            <!-- Overview section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/overview"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <TextView
+                android:id="@+id/overview_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:visibility="gone"
+                tools:text="Here movie overview goes" />
+
+            <!-- Overview section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/trailers"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <LinearLayout
+                android:id="@+id/trailers_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="16dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/empty_trailers_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:text="@string/empty_trailers" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 </ScrollView>

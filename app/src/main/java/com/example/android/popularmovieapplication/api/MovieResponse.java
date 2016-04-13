@@ -7,9 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-/**
- * Created by ChadYeo on 2/15/16.
- */
+
 public class MovieResponse {
 
     public ArrayList<Movie> results;
@@ -31,9 +29,13 @@ public class MovieResponse {
         public String releaseDate;
 
         public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {
-            public Movie createFromParcel(Parcel in) { return new Movie(in); }
+            public Movie createFromParcel(Parcel in) {
+                return new Movie(in);
+            }
 
-            public Movie[] newArray(int size) { return new Movie[size]; }
+            public Movie[] newArray(int size) {
+                return new Movie[size];
+            }
         };
 
         private Movie(Parcel in) {
@@ -45,7 +47,9 @@ public class MovieResponse {
         }
 
         @Override
-        public int describeContents() { return 0; }
+        public int describeContents() {
+            return 0;
+        }
 
         @Override
         public void writeToParcel(Parcel out, int flags) {
@@ -56,11 +60,14 @@ public class MovieResponse {
             out.writeString(releaseDate);
         }
 
-        // Helper method to build poster image url.
+        /**
+         * Helper method to build poster image url.
+         */
         public String getPosterUrl() {
             return IMAGE_BASE_URL + "w185" + this.posterPath;
         }
 
         private final static String IMAGE_BASE_URL = "http://image.tmdb.org/t/p/";
+
     }
 }
