@@ -18,7 +18,7 @@ public class DetailsActivity extends AppCompatActivity {
         MovieResponse.Movie movie;
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
-            movie = extras.getParcelable(MovieDetailFragment.ARG_MOVIE);
+            movie = extras.getParcelable(MovieDetailFragment.MOVIE);
         } else {
             throw new NullPointerException("No movie found in intent extras");
         }

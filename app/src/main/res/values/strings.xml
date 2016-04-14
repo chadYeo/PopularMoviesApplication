@@ -11,11 +11,20 @@
     <string name="sort_order_dialog_title">Select sort order</string>
     <string name="prefs_sort_order">sort_order</string>
     <string name="sort_order_title">Sort by</string>
+    <string name="sort_popularity">Popularity</string>
+    <string name="sort_rating">Rating</string>
+    <string name="sort_favorites">Favorites</string>
     <string name="overview">Overview</string>
     <string name="trailers">Trailers</string>
+    <string name="action_share">Share</string>
+    <string name="action_sort_order">Sort Order</string>
     <string name="empty_trailers">No trailers available</string>
     <string name="empty_overview">No overview available</string>
     <string name="reviews">Reviews</string>
     <string name="empty_reviews">No reviews available</string>
+    <string name="desc_user_avatar">Review author avatar</string>
+    <string name="sort_order_rating">vote_average.desc</string>
+    <string name="sort_order_favorites">favorites</string>
+    <string name="prefs_favorites">favorites_list</string>
 
 </resources>

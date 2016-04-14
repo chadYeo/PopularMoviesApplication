@@ -2,6 +2,7 @@ package com.example.android.popularmovieapplication.api;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ public class TrailersResponse {
 
     public ArrayList<Trailer> results;
 
-    private static class Trailer implements Parcelable{
+    public static class Trailer implements Parcelable{
 
         public static final Creator<Trailer> CREATOR = new Creator<Trailer>() {
             @Override

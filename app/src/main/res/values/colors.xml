@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="rating_tint">#FFC107</color>
     <color name="date_tint">#BDBDBD</color>
+    <color name="icon_tint">#999999</color>
 </resources>

@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -27,6 +29,7 @@ import com.example.android.popularmovieapplication.api.RetrofitAdapter;
 import com.example.android.popularmovieapplication.api.TmdbService;
 
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -36,15 +39,19 @@ import retrofit.client.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MoviesFragment extends Fragment {
+public class MoviesFragment extends Fragment implements LoaderManager.LoaderCallbacks<Object> {
 
     private final static String ARG_ITEMS = "items";
     private final static String ARG_SORT_ORDER = "sort_order";
     private final static String ARG_VIEW_STATE = "view_state";
+    private final static String ARG_SELECTED_ITEM = "selected_item";
 
     private final static int VIEW_STATE_LOADING = 0;
     private final static int VIEW_STATE_ERROR = 1;
-    private final static int VIEW_STATE_RESULTS = 2;
+    private final static int VIEW_STATE_EMPTY = 2;
+    private final static int VIEW_STATE_RESULTS = 3;
+
+    private final static int LOADER_ID = 1;
 
     private TextView mErrorTextView;
     private Button mRetryButton;
@@ -106,7 +113,9 @@ public class MoviesFragment extends Fragment {
                     showErrorViews();
                     break;
                 case VIEW_STATE_RESULTS:
+                    int selectedPosition = savedInstanceState.getInt(ARG_SELECTED_ITEM, 0);
                     ArrayList<MovieResponse.Movie> items = savedInstanceState.getParcelableArrayList(ARG_ITEMS);
+                    mAdapter.mSelectedPosition = selectedPosition;
                     mAdapter.setItems(items);
                     showResultViews();
                     break;
@@ -128,8 +137,61 @@ public class MoviesFragment extends Fragment {
         }
         outState.putInt(ARG_VIEW_STATE, state);
         outState.putParcelableArrayList(ARG_ITEMS, mAdapter.getItems());
+        outState.putInt(ARG_SELECTED_ITEM, mAdapter.mSelectedPosition);
         outState.putString(ARG_SORT_ORDER, mSortOrder);
         super.onSaveInstanceState(outState);
+    }
+
+    /**
+     * Changes sort order, stores selected param to SharedPreferences, reloads fragment data.
+     *
+     * @param sortOrder sortBy param
+     */
+    public void setSortOrder(String sortOrder) {
+        mSortOrder = sortOrder;
+        mAdapter.mSelectedPosition = 0;
+        populateData();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(getString(R.string.prefs_sort_order), mSortOrder);
+        editor.apply();
+    }
+
+    public void favoriteListChanged(long movieId) {
+        if (mSortOrder.equals(getString(R.string.sort_order_favorites))) {
+            // TODO: remove/insert by one item
+            populateData();
+        }
+    }
+
+    /** Returns favorites list. */
+    private ArrayList<Long> loadFavorites() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String favoritesString = prefs.getString(getString(R.string.prefs_favorites), "");
+        ArrayList<Long> list = new ArrayList<>();
+        if (favoritesString.length() > 0) {
+            StringTokenizer st = new StringTokenizer(favoritesString, ",");
+            while (st.hasMoreTokens()) {
+                list.add(Long.parseLong(st.nextToken()));
+            }
+        }
+        if (mAdapter != null) {
+            mAdapter.setFavorites(list);
+        }
+        return list;
+    }
+
+    /** Loads data from server or from db. */
+    private void populateData() {
+        // load from db or from server
+        if (mSortOrder.equals(getString(R.string.sort_order_favorites))) {
+            showLoadingViews();
+            getActivity().getSupportLoaderManager().restartLoader(LOADER_ID, null, this);
+        } else {
+            getActivity().getSupportLoaderManager().destroyLoader(LOADER_ID);
+            loadFavorites();
+            loadData();
+        }
     }
 
     // Loads movie list
@@ -184,13 +246,32 @@ public class MoviesFragment extends Fragment {
         mRetryButton.setVisibility(View.GONE);
     }
 
+    @Override
+    public Loader<Object> onCreateLoader(int id, Bundle args) {
+        return null;
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Object> loader, Object data) {
+
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Object> loader) {
+
+    }
+
     // Movies RecyclerView adapter class.
     private static class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder> {
+
         final private Context mContext;
 
         private ArrayList<MovieResponse.Movie> mItems;
+        private ArrayList<Long> mFavorites;
 
         final private ListActionListener mActionListener;
+
+        private int mSelectedPosition;
 
         public MovieAdapter(Context context, ListActionListener listener) {
             mContext = context;
@@ -216,7 +297,7 @@ public class MoviesFragment extends Fragment {
             holder.mPosterView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    mActionListener.onMovieSelected(mItems.get(position));
+                    selectItem(position);
                 }
             });
         }
@@ -224,10 +305,25 @@ public class MoviesFragment extends Fragment {
         @Override
         public int getItemCount() { return mItems.size(); }
 
+        public void setFavorites(ArrayList<Long> favorites) {
+            mFavorites = favorites;
+        }
+
         public void setItems(ArrayList<MovieResponse.Movie> items) {
             mItems = items;
             notifyDataSetChanged();
         }
+
+        private void selectItem(int position) {
+            int prevPosition = mSelectedPosition;
+            mSelectedPosition = position;
+            notifyItemChanged(position);
+            notifyItemChanged(prevPosition);
+            MovieResponse.Movie movie = mItems.get(position);
+            boolean isFavorite = (mFavorites != null && mFavorites.contains(movie.id));
+            mActionListener.onMovieSelected(movie, isFavorite);
+        }
+
         public ArrayList<MovieResponse.Movie> getItems() { return mItems; }
     }
 
@@ -243,6 +339,8 @@ public class MoviesFragment extends Fragment {
 
     // Movie list action listener
     public interface ListActionListener {
-        void onMovieSelected(MovieResponse.Movie movie);
+        void onMovieSelected(MovieResponse.Movie movie, boolean isFavorite);
+
+        void onEmptyMovieList();
     }
 }

@@ -7,4 +7,7 @@
     <dimen name="grid_item_margin">4dp</dimen>
     <dimen name="view_vertical_margin">8dp</dimen>
     <dimen name="view_horizontal_margin">8dp</dimen>
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="avatar_size">48dp</dimen>
 </resources>
